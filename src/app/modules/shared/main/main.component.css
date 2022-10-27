@@ -1,0 +1,13 @@
+.main-content {
+  margin-left: 165px;
+  width: calc(100% - 165px);
+  transition: margin-left 300ms;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}

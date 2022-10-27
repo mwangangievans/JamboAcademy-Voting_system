@@ -2,7 +2,7 @@
   height: 100vh;
   background-color: red;
   /* width: 100%; */
- overflow-y: hidden;
+ /* overflow-y: hidden; */
  overflow-x: hidden;
 }
 .auth-left{
@@ -55,7 +55,7 @@ h4 {
 }
 
 form {
-  width: 300px;
+  width: 80%;
   margin-left: 20px;
 }
 
@@ -73,7 +73,7 @@ form input {
   border-radius: 6px;
   outline: none;
 }
-input[type="button"] {
+.subit-btn {
   width: 320px;
   height: 35px;
   margin-top: 20px;
@@ -96,4 +96,10 @@ p {
 .para-2 a {
   color: #49c1a2;
 }
+/* media query.... */
 
+@media only screen and (max-width: 600px) {
+  .auth-right {
+  display: none;
+  }
+}

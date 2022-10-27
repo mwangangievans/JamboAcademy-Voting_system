@@ -10,25 +10,36 @@ import { registerData } from 'src/app/Interfaces/Interface';
 export class RegisterComponent implements OnInit {
   @ViewChild('form') form!:NgForm
   login_state : boolean = false ;
-
+  year:string = "First Year";
   Year_level_Array:string []=["First Year" ,"Second Year"]
-
+  student_array :registerData  []= JSON.parse(<string>localStorage.getItem("StudentsTable")|| "[]");
   constructor() { }
 
   ngOnInit(): void {
 
+    console.log(this.student_array);
   }
-
   loginState(){
     this.login_state = true;
   }
-
   registerState(){
     this.login_state = false;
   }
+  onRegister(signData:NgForm){
+    if(signData.valid){
+      const StudentData : registerData ={...signData.value,
+        role:"student",Is_voted:false
+      }
+      console.log(typeof this.student_array );
+      this.student_array.push(StudentData)
+      localStorage.setItem("StudentsTable", JSON.stringify(this.student_array));
 
-  onRegister(signData:registerData){
-    console.log(signData);
+    }
+
+
+  }
+
+  onLogin(signData:NgForm){
 
   }
 
