@@ -1,0 +1,84 @@
+<section class="auth-section">
+
+  <div class="row">
+    <div class="auth-left col-md-4">
+      <h1>JAMBO ACADEMY</h1>
+      <p>Online Election System
+      </p>
+      <div class="container">
+      <div class="auth-labels row">
+        <div class="login-text col-md-6"><p [ngStyle]="{'border-bottom': login_state ? 'solid 3px #6F8F9A' : 'solid .5px #6F8F9A'}" (click)="loginState()">Login</p></div>
+        <div class="register-text col-md-6"><p [ngStyle]="{'border-bottom': !login_state ? 'solid 3px #6F8F9A' : 'solid .5px #6F8F9A'}" (click)="registerState()">Register</p></div>
+      </div>
+      <ng-container *ngIf="login_state; then login_form else register_form">
+      </ng-container>
+      <ng-template #login_form>
+  <div class="row">
+    <form>
+      <label>Admission No.</label>
+      <input type="email" placeholder="" />
+      <label>Password</label>
+      <input type="password" placeholder="" />
+      <input type="button" value="Submit" />
+    </form>
+  </div>
+       </ng-template>
+       <ng-template #register_form>
+          <form #f="ngForm"  (ngSubmit)="onRegister(f.value)">
+            <div class="row">
+              <label>Full Name</label>
+              <input type="text" placeholder=""
+              name="full_name"
+               placeholder="full name"
+               required
+               full_name
+               ngModel
+               #full_name="ngModel"/>
+            </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Admission No</label>
+                  <input type="number" placeholder=""
+                   name="Admission"
+                  placeholder="Admission number"
+                  required
+                  Admission
+                  ngModel
+                  #Admission="ngModel"/>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleInputEmail">Year Level</label>
+                  <select aria-label="Default select example" >
+                    <option selected>Year</option>
+                    <option *ngFor="let year of Year_level_Array" value={{year}}
+                      name="year"
+
+                    required
+                    year
+                    ngModel
+                    #year="ngModel">{{year}}</option>
+                  </select>
+                </div>
+              </div>
+
+            <label>Password</label>
+            <input type="password" placeholder=""
+             name="password"
+            placeholder="password"
+            required
+            password
+            ngModel
+            #password="ngModel"/>
+            <input type="button" value="Submit" />
+          </form>
+
+        </ng-template>
+
+      </div>
+    </div>
+    <div class="auth-right col-md-8">
+<img src="../../../../assets/images/welcome.png" alt="">
+    </div>
+  </div>
+
+</section>

@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'JamboAcademy'`, () => {
+  it(`should have as title 'Voting'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('JamboAcademy');
+    expect(app.title).toEqual('Voting');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('JamboAcademy app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Voting app is running!');
   });
 });
