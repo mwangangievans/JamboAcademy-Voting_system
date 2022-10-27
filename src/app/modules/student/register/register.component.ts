@@ -29,11 +29,12 @@ export class RegisterComponent implements OnInit {
     if(signData.valid){
       const StudentData : registerData ={...signData.value,
 
-        role:"student",Is_voted:true
+        role:"student",Is_voted:false
       }
       console.log(typeof this.student_array );
       this.student_array.push(StudentData)
       localStorage.setItem("StudentsTable", JSON.stringify(this.student_array));
+      signData.reset()
 
     }
 

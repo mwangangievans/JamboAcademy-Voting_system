@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   TotalVotesCasted  = this.student_array.filter((item)=>item.Is_voted === true)
   SlotsToViewFor:string []=["School President" ,"class Rep"]
   Roles:string []=["student" ,"Cadidate","Admin"]
-
+  display_studentRecord:boolean= true
 
 
   firstYearsPercentage = ((this.firstYears.length/this.tatolStudents)*100)

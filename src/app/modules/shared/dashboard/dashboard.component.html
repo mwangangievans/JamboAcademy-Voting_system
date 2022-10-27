@@ -2,9 +2,7 @@
   <main>
     <div class="page-header">
       <h1>Dashboard</h1>
-      <!-- <small>Home / Dashboard</small> -->
     </div>
-
     <div class="page-content">
       <div class="analytics">
         <div class="card">
@@ -60,60 +58,57 @@
         </div>
       </div>
 
-      <div class="records table-responsive">
-        <div class="record-header">
-          <!-- <div class="add">
-            <span>Entries</span>
-            <select name="" id="">
-              <option value="">ID</option>
-            </select>
-            <button>Add record</button>
-          </div> -->
+      <ng-container *ngIf="display_studentRecord; then students_record; else add_cadidate">
+      </ng-container>
+      <ng-template #students_record>
+        <div class="records table-responsive">
+          <div class="record-header">
+            <div class="browse">
+              <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/>
+                <button>Add Cadidate</button>
+            </div>
+          </div>
 
-          <div class="browse">
-            <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/>
-            <select name="" id="">
-              <option value="">Status</option>
-            </select>
+          <div>
+            <table width="100%">
+              <thead>
+                <tr>
+                  <th>Admission</th>
+                  <th><span class="las la-sort"></span> Full Name</th>
+                  <th><span class="las la-sort"></span> year</th>
+                  <th><span class="las la-sort"></span> role</th>
+                  <th><span class="las la-sort"></span> Password</th>
+                  <th><span class="las la-sort"></span> Vote Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of student_array |filterPipe:filteredString">
+                  <td>{{student.Admission}}</td>
+                  <td>
+                    <div class="client">
+                      <div class="client-info">
+                        <h4>{{student.full_name}}</h4>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{{student.year}}</td>
+                  <td>{{student.role}}</td>
+                  <td>{{student.password}}</td>
+                  <td>
+                    <div class="actions">
+                     <td *ngIf="student.Is_voted"><p>Voted</p></td>
+                     <td *ngIf="!student.Is_voted"><small [ngStyle]="{'color': 'red'}">Not Voted</small></td>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-
-        <div>
-          <table width="100%">
-            <thead>
-              <tr>
-                <th>Admission</th>
-                <th><span class="las la-sort"></span> Full Name</th>
-                <th><span class="las la-sort"></span> year</th>
-                <th><span class="las la-sort"></span> role</th>
-                <th><span class="las la-sort"></span> Password</th>
-                <th><span class="las la-sort"></span> Vote Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let student of student_array |filterPipe:filteredString">
-                <td>{{student.Admission}}</td>
-                <td>
-                  <div class="client">
-                    <div class="client-info">
-                      <h4>{{student.full_name}}</h4>
-                    </div>
-                  </div>
-                </td>
-                <td>{{student.year}}</td>
-                <td>{{student.role}}</td>
-                <td>{{student.password}}</td>
-                <td>
-                  <div class="actions">
-                   <td *ngIf="student.Is_voted"><p>Voted</p></td>
-                   <td *ngIf="!student.Is_voted"><small [ngStyle]="{'color': 'red'}">Not Voted</small></td>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      </ng-template>
+      <ng-template #add_cadidate>
+        <app-add-cadidate></app-add-cadidate>
+      </ng-template>
     </div>
   </main>
 </div>

@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { FormsModule } from '@angular/forms';
+import { AddCadidateComponent } from './add-cadidate/add-cadidate.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     MainComponent,
     FilterPipePipe,
+    AddCadidateComponent,
 
   ],
   imports: [
