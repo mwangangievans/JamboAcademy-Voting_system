@@ -59,8 +59,12 @@
       </div>
       <div class="record-header">
         <div class="browse">
-          <div *ngIf="display_studentRecord"> <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/></div>
+          <div *ngIf="display_studentRecord"> <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/>
             <button (click)="addCadidate()">Add Cadidate</button>
+            <!-- <button (click)="Cadidate()"> Cadidates</button> -->
+          </div>
+
+
         </div>
       </div>
       <ng-container *ngIf="display_studentRecord; then students_record; else add_cadidate">
@@ -68,12 +72,7 @@
 
       <ng-template #students_record>
         <div class="records table-responsive">
-          <!-- <div class="record-header">
-            <div class="browse">
-              <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/>
-                <button (click)="addCadidate()">Add Cadidate</button>
-            </div>
-          </div> -->
+
 
           <div>
             <table width="100%">

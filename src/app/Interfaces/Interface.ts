@@ -5,6 +5,7 @@ export  interface registerData{
   password:string
   role?:string
   Is_voted?:boolean
+  position?:string
 }
 
 export  interface cadidateData{

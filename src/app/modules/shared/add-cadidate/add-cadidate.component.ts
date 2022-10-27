@@ -16,14 +16,31 @@ export class AddCadidateComponent implements OnInit {
   SlotsToViewFor:string []=["School President" ,"class Rep"]
   Roles:string []=["student" ,"Cadidate","Admin"]
   student_array :registerData  []= JSON.parse(localStorage.getItem("StudentsTable")|| "[]");
+  cadidate_array :cadidateData  []= JSON.parse(localStorage.getItem("cadidateTable")|| "[]");
+
 
   constructor() { }
 
   ngOnInit(): void {
+
+
+
   }
 
   addCadisate(cadidate:NgForm){
-  console.log(cadidate.value);
+    if(cadidate.valid){
+     const cadidateData  = this.student_array.filter((item)=>item.Admission != cadidate.value.Admission)
+     cadidateData
+
+
+    //  console.log(typeof cadidateData);
+
+     this.cadidate_array.push(cadidate.value)
+     localStorage.setItem("cadidateTable", JSON.stringify(this.student_array));
+     cadidate.reset()
+
+   }
+
 
 
   }
