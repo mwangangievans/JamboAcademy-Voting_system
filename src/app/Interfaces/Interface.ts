@@ -1,6 +1,6 @@
 export  interface registerData{
-  name:string
-  admision_no:number
+  full_name:string
+  Admission:number
   year:string
   password:string
   role?:string

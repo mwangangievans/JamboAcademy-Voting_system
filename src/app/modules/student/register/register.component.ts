@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   login_state : boolean = false ;
   year:string = "First Year";
   Year_level_Array:string []=["First Year" ,"Second Year"]
-  student_array :registerData  []= JSON.parse(<string>localStorage.getItem("StudentsTable")|| "[]");
+  student_array :registerData  []= JSON.parse(localStorage.getItem("StudentsTable")|| "[]");
   constructor() { }
 
   ngOnInit(): void {
@@ -28,7 +28,8 @@ export class RegisterComponent implements OnInit {
   onRegister(signData:NgForm){
     if(signData.valid){
       const StudentData : registerData ={...signData.value,
-        role:"student",Is_voted:false
+
+        role:"student",Is_voted:true
       }
       console.log(typeof this.student_array );
       this.student_array.push(StudentData)

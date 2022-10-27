@@ -129,9 +129,9 @@ background: #b30000;
   width: calc(100% - 60px);
 }
 
-#menu-toggle:checked ~ .main-content header {
+/* #menu-toggle:checked ~ .main-content header {
   left: 60px;
-}
+} */
 
 #menu-toggle:checked ~ .sidebar .profile,
 #menu-toggle:checked ~ .sidebar .side-menu a small {
