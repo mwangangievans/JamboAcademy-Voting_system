@@ -7,4 +7,10 @@ export  interface registerData{
   Is_voted?:boolean
 }
 
+export  interface cadidateData{
+  position:string
+  Admission:number
+}
+
+
 

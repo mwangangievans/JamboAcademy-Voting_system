@@ -28,6 +28,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   console.log(this.firstYearsPercentage);
     }
+
+    addCadidate(){
+     this.display_studentRecord=false
+    }
   }
 
 
