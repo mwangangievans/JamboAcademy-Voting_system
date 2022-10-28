@@ -1,3 +1,49 @@
+
+JAMBO ACADEMY
+
+
+its an online system where students can create account and vote for their school leaders.
+
+
+## 🔗 Links
+https://github.com/mwangangievans/JamboAcademy-Voting_system
+## Hosted LINK HOMEPAGE
+
+https://jambo-academy-online-voting.vercel.app/
+
+
+## Hosted LINK HOMEPAGE
+
+https://jambo-academy-online-voting.vercel.app/admin/dashboard
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+    git clone git@github.com:mwangangievans/JamboAcademy-Voting_system.git
+  cd JamboAcademy-Voting_system
+
+  npm Install
+  ~to install dependency
+
+  ng serve  -o
+
+  ~ to start serve
+  
+```
+    
+## Screenshots
+HOME PAGE
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
 # Voting
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
