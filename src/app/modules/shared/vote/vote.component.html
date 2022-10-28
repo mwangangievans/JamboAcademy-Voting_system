@@ -1,83 +1,96 @@
-<h1>Hello Student Its your Right To cast Your Vote!!!</h1>
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-       School President
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      >
+        School President
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
       <div class="accordion-body">
-        <div class=" container">
-          <form #vote="ngForm" (ngSubmit)="VoteCast(vote)">
-          <div class="row" *ngFor="let cadidate of ElegibleCadidates">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="our-team" >
-                <div  *ngIf="cadidate.position ==='School President'">
-                <div class="picture">
-                  <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-                </div>
-                <div class="team-content">
-                  <h3 class="name">{{cadidate.student_name}}</h3>
-                  <h3 class="name">{{cadidate.year}}</h3>
-                  <h4 class="title">For {{ cadidate.position}}</h4>
-                    <label>Admission No</label>
-                    <select name="student_name" [(ngModel)]="student_name">
-                      <option value="" disabled>select Year</option>
-                      <option *ngFor="let year of student_array" [value]="year">
-                        {{ year }}
-                      </option>
-                    </select>
-                    <label>Full Name</label>
+        <div class="vote row" *ngFor="let cadidate of ElegibleCadidates">
+          <div
+            class="col-md-6"
+            *ngIf="cadidate.position === 'School President'"
+          >
+            <div class="card">
+              <div class="container">
+                <h1>{{ cadidate.student_name }}</h1>
+                <p class="title">FOR</p>
+                <p>{{ cadidate.position }}</p>
+                <form #f="ngForm" (ngSubmit)="castVote(f)">
+                  <select name="_admission" ngModel>
+                    <option value="" disabled>select voter</option>
+                    <option *ngFor="let cadidate of student_array" [value]="cadidate._admission">
+                      {{ cadidate.student_name }}
+                    </option>
+                  </select>
+                  <input id="firstName" type="text" class="form-control"
+                  name="cadidate_name" value="{{cadidate.student_name }}" ngModel>
+                  <p><button type="submit" class="voter-btn">Vote</button></p>
+                </form>
 
-                    <input
-                    type="text"
-                    placeholder=""
-                    name="student_name"
-                    placeholder="full name"
-                    required
-                    student_name
-                    ngModel
-                    #student_name="ngModel"
-                  />
-               <h4 class="title"> <button  (click)="Vote(cadidate._admission)" type="submit">Vote Now</button> </h4>
-                </div>
-              </div>
               </div>
             </div>
+            <div class="col-md-6">
+
+            </div>
           </div>
-        </form>
         </div>
-
+      </div>
     </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-       School Sport Captain
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-          <div class=" container">
-            <div class="row" *ngFor="let cadidate of ElegibleCadidates">
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="our-team" >
-                  <div  *ngIf="cadidate.position ==='Sport Captain'">
-                  <div class="picture">
-                    <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-                  </div>
-                  <div class="team-content">
-                    <h3 class="name">{{cadidate.student_name}}</h3>
-                    <h3 class="name">{{cadidate.year}}</h3>
-                    <h4 class="title">For {{ cadidate.position}}</h4>
-                    <h4 class="title"> <button (click)="Vote(cadidate._admission)">Vote Now</button> </h4>
-                  </div>
-                </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          School Camptain
+        </button>
+      </h2>
+      <div
+        id="collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <div class="row" *ngFor="let cadidate of ElegibleCadidates">
+            <div
+              class="col-md-6"
+              *ngIf="cadidate.position === 'Sport Captain'"
+            >
+              <div class="card">
+                <div class="container">
+                  <h1>{{ cadidate.student_name }}</h1>
+                  <p class="title">FOR</p>
+                  <p>{{ cadidate.position }}</p>
+                  <a href="#"><i class="fa fa-dribbble"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <p><button>Vote</button></p>
                 </div>
               </div>
+              <div class="col-md-6"></div>
             </div>
-          </div>
+        </div>
+      </div>
     </div>
   </div>
-
+</div>

@@ -10,6 +10,9 @@ import { registerData } from 'src/app/Interfaces/Interface';
 export class VoteComponent implements OnInit {
   student_array :registerData  []= JSON.parse(localStorage.getItem("StudentsTable")|| "[]");
   ElegibleCadidates  = this.student_array.filter((item)=>item.role === "cadidate")
+  ElegibleVoters  = this.student_array.filter((item)=>item.Is_voted === false)
+  vote: string = "First Year";
+  cadidate_name:string=""
   student_name:string="";
   @ViewChild('form') form!: NgForm
   // cadidate_name:string=""
@@ -23,7 +26,7 @@ export class VoteComponent implements OnInit {
 console.log("vote...." +id);
 
   }
-  VoteCast(vote:NgForm){
+  castVote(vote:NgForm){
     console.log(vote.value);
 
 
