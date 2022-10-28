@@ -11,7 +11,7 @@ export class ViewcadidateComponent implements OnInit {
   student_array :registerData  []= JSON.parse(localStorage.getItem("StudentsTable")|| "[]");
 
   ElegibleCadidates  = this.student_array.filter((item)=>item.role === "cadidate")
-
+  student_name:string=""
 
 
   constructor(private router:Router) { }
@@ -31,7 +31,7 @@ export class ViewcadidateComponent implements OnInit {
                 role: "student",
                 Is_voted: element.Is_voted,
                 student_name: element.student_name,
-                pass: element.pass,
+                password: element.password,
                 year: element.year
               }
       }

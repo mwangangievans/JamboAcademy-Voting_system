@@ -2,7 +2,7 @@ export  interface registerData{
   student_name:string
   _admission:number
   year:string
-  pass:string
+  password:string
   role:string
   Is_voted:boolean
   position?:string
@@ -13,15 +13,12 @@ export  interface cadidateData{
   Admission:number
 }
 
-// export  interface cadidateDataInterface{
-// _admission?: number,
-// role?: string,
-// Is_voted?:boolean,
-// student_name?:string,
-// position?:string,
-// pass?:any,
-// year?:string
-// }
+export interface LoginsInterface {
+  _admission:number;
+  password:number;
+  role:string;
+  IsLogin:boolean;
+}
 
 
 

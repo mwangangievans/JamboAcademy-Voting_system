@@ -9,6 +9,7 @@
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <div class=" container">
+          <form #vote="ngForm" (ngSubmit)="VoteCast(vote)">
           <div class="row" *ngFor="let cadidate of ElegibleCadidates">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <div class="our-team" >
@@ -20,13 +21,34 @@
                   <h3 class="name">{{cadidate.student_name}}</h3>
                   <h3 class="name">{{cadidate.year}}</h3>
                   <h4 class="title">For {{ cadidate.position}}</h4>
-                  <h4 class="title"> <button>Vote Now</button> </h4>
+                    <label>Admission No</label>
+                    <select name="student_name" [(ngModel)]="student_name">
+                      <option value="" disabled>select Year</option>
+                      <option *ngFor="let year of student_array" [value]="year">
+                        {{ year }}
+                      </option>
+                    </select>
+                    <label>Full Name</label>
+
+                    <input
+                    type="text"
+                    placeholder=""
+                    name="student_name"
+                    placeholder="full name"
+                    required
+                    student_name
+                    ngModel
+                    #student_name="ngModel"
+                  />
+               <h4 class="title"> <button  (click)="Vote(cadidate._admission)" type="submit">Vote Now</button> </h4>
                 </div>
               </div>
               </div>
             </div>
           </div>
-        </div></div>
+        </form>
+        </div>
+
     </div>
   </div>
   <div class="accordion-item">
@@ -37,8 +59,6 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-
-        <div class="accordion-body">
           <div class=" container">
             <div class="row" *ngFor="let cadidate of ElegibleCadidates">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -51,14 +71,13 @@
                     <h3 class="name">{{cadidate.student_name}}</h3>
                     <h3 class="name">{{cadidate.year}}</h3>
                     <h4 class="title">For {{ cadidate.position}}</h4>
-                    <h4 class="title"> <button>Vote Now</button> </h4>
+                    <h4 class="title"> <button (click)="Vote(cadidate._admission)">Vote Now</button> </h4>
                   </div>
                 </div>
                 </div>
               </div>
             </div>
-          </div></div>
-           </div>
+          </div>
     </div>
   </div>
-</div>
+

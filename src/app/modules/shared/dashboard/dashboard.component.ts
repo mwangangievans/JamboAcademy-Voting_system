@@ -29,6 +29,14 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.student_array);
+    for (const key in this.student_array) {
+      if (Object.prototype.hasOwnProperty.call(this.student_array, key)) {
+        const element = this.student_array[key];
+        console.log(element.student_name);
+      }
+    }
+
     }
 
     addCadidate(){

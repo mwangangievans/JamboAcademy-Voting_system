@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCadidateComponent } from './add-cadidate/add-cadidate.component';
 import { ViewcadidateComponent } from './viewcadidate/viewcadidate.component';
 import { VoteComponent } from './vote/vote.component';
+import { DummyDataComponent } from './dummy-data/dummy-data.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { VoteComponent } from './vote/vote.component';
     AddCadidateComponent,
     ViewcadidateComponent,
     VoteComponent,
+    DummyDataComponent,
 
   ],
   imports: [

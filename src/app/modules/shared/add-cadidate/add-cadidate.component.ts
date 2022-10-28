@@ -42,7 +42,7 @@ export class AddCadidateComponent implements OnInit {
                 Is_voted: element.Is_voted,
                 student_name: element.student_name,
                 position: cadidate.value.position,
-                pass: element.pass,
+                password: element.password,
                 year: element.year
               }
       }
