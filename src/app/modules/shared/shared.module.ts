@@ -7,8 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCadidateComponent } from './add-cadidate/add-cadidate.component';
+import { ViewcadidateComponent } from './viewcadidate/viewcadidate.component';
 
 
 @NgModule({
@@ -19,12 +20,14 @@ import { AddCadidateComponent } from './add-cadidate/add-cadidate.component';
     MainComponent,
     FilterPipePipe,
     AddCadidateComponent,
+    ViewcadidateComponent,
 
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

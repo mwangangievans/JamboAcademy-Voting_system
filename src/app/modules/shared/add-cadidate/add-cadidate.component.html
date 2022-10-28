@@ -1,25 +1,22 @@
+<form #f="ngForm" (ngSubmit)="addCadisate(f)">
+  <label for="exampleInputEmail">Position</label>
 
-  <form #f="ngForm" (ngSubmit)="addCadisate(f)">
+  <select name="position" [(ngModel)]="position">
+    <option value="" disabled>select Position</option>
+    <option *ngFor="let position of SlotsToViewFor" [value]="position">
+      {{ position }}
+    </option>
+  </select>
 
-    <label for="exampleInputEmail">Position</label>
+  <label for="exampleInputEmail">Students Name</label>
 
-    <select name="position" [(ngModel)]="position">
-      <option value="" disabled>select Position</option>
-      <option *ngFor="let position of SlotsToViewFor" [value]="position">
-        {{ position}}
-      </option>
-    </select>
-
-      <label for="exampleInputEmail">Students Name</label>
-
-      <select name="Admission" [(ngModel)]="full_name">
-        <option value="" disabled>select student</option>
-        <option *ngFor="let student of student_array" [value]="student.Admission">
-          {{ student.full_name }}
-        </option>
-      </select>
-    <button class="subit-btn btn btn-primary" type="submit" [disabled]='!f.valid'>
-      submit
-    </button>
-  </form>
-
+  <select name="student_name" [(ngModel)]="student_name">
+    <option value="" disabled>select student</option>
+    <option *ngFor="let student of ElegibleCadidates" [value]="student._admission">
+      {{ student.student_name }}
+    </option>
+  </select>
+  <button class="subit-btn btn btn-primary" type="submit" [disabled]="!f.valid">
+    submit
+  </button>
+</form>

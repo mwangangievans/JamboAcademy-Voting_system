@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { cadidateData, registerData } from 'src/app/Interfaces/Interface';
 
 @Component({
@@ -8,40 +9,50 @@ import { cadidateData, registerData } from 'src/app/Interfaces/Interface';
   styleUrls: ['./add-cadidate.component.css']
 })
 export class AddCadidateComponent implements OnInit {
-  @ViewChild('form') form!:NgForm
-  full_name:string = "";
-  position:string = "";
+  @ViewChild('form') form!: NgForm
+  student_name: string = "";
+  position: string = "";
 
 
-  SlotsToViewFor:string []=["School President" ,"class Rep"]
-  Roles:string []=["student" ,"Cadidate","Admin"]
+  SlotsToViewFor: string[] = ["School President", "Sport Captain"]
+  Roles: string[] = ["student", "Cadidate", "Admin"]
   student_array :registerData  []= JSON.parse(localStorage.getItem("StudentsTable")|| "[]");
-  cadidate_array :cadidateData  []= JSON.parse(localStorage.getItem("cadidateTable")|| "[]");
 
+  cadidate_array: any[] = JSON.parse(localStorage.getItem("cadidateTable") || "[]");
 
-  constructor() { }
+  ElegibleCadidates  = this.student_array.filter((item)=>item.role === "student")
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
 
-
-
-  }
-
-  addCadisate(cadidate:NgForm){
-    if(cadidate.valid){
-     const cadidateData  = this.student_array.filter((item)=>item.Admission != cadidate.value.Admission)
-     cadidateData
-
-
-    //  console.log(typeof cadidateData);
-
-     this.cadidate_array.push(cadidate.value)
-     localStorage.setItem("cadidateTable", JSON.stringify(this.student_array));
-     cadidate.reset()
-
-   }
-
-
+// console.log(this.student_array);
 
   }
+
+  addCadisate(cadidate: NgForm) {
+    if (cadidate.valid) {
+      this.student_array = this.student_array.map((element)=>{
+
+      let studentData : registerData = element
+      if(element._admission == cadidate.value.student_name){
+        studentData = {
+                _admission: element._admission,
+                role: "cadidate",
+                Is_voted: element.Is_voted,
+                student_name: element.student_name,
+                position: cadidate.value.position,
+                pass: element.pass,
+                year: element.year
+              }
+      }
+      return studentData;
+      })
+    }
+    localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
+    cadidate.reset()
+    this.router.navigate(['admin/view-cadidate']);
+  }
+
 }
+

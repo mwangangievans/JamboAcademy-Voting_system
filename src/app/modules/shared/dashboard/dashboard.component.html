@@ -72,8 +72,6 @@
 
       <ng-template #students_record>
         <div class="records table-responsive">
-
-
           <div>
             <table width="100%">
               <thead>
@@ -88,17 +86,17 @@
               </thead>
               <tbody>
                 <tr *ngFor="let student of student_array |filterPipe:filteredString">
-                  <td>{{student.Admission}}</td>
+                  <td>{{student._admission}}</td>
                   <td>
                     <div class="client">
                       <div class="client-info">
-                        <h4>{{student.full_name}}</h4>
+                        <h4>{{student.student_name}}</h4>
                       </div>
                     </div>
                   </td>
                   <td>{{student.year}}</td>
                   <td>{{student.role}}</td>
-                  <td>{{student.password}}</td>
+                  <td>{{student.pass}}</td>
                   <td>
                     <div class="actions">
                      <td *ngIf="student.Is_voted"><p>Voted</p></td>

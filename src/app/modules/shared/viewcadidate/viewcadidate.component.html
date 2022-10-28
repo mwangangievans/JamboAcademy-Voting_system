@@ -1,0 +1,45 @@
+<div class="records table-responsive">
+  <div>
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Admission</th>
+          <th><span class="las la-sort"></span> Full Name</th>
+          <th><span class="las la-sort"></span> year</th>
+          <th><span class="las la-sort"></span> role</th>
+          <th><span class="las la-sort"></span> Position</th>
+          <th><span class="las la-sort"></span> Vote Status</th>
+          <th><span class="las la-sort"></span> Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of ElegibleCadidates">
+
+          <td>{{student._admission}}</td>
+          <td>
+            <div class="client">
+              <div class="client-info">
+             {{student.student_name}}
+              </div>
+            </div>
+          </td>
+          <td>{{student.year}}</td>
+          <td>{{student.role}}</td>
+          <td>{{student.position}}</td>
+          <td>
+            <div class="actions">
+             <td *ngIf="student.Is_voted"><p>Voted</p></td>
+             <td *ngIf="!student.Is_voted"><small [ngStyle]="{'color': 'red'}">Not Voted</small></td>
+            </div>
+          </td>
+          <td> <p>
+            <span class="edit-icon las la-edit"></span></p>
+          <p (click)="deleteCadidate(student._admission)"><span class="delete_icon las la-trash"></span></p>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

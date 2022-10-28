@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   firstYears  = this.student_array.filter((item)=>item.year === "First Year")
   SecondYears  = this.student_array.filter((item)=>item.year === "Second Year")
   TotalVotesCasted  = this.student_array.filter((item)=>item.Is_voted === true)
-  SlotsToViewFor:string []=["School President" ,"class Rep"]
+  SlotsToViewFor:string []=["School President" ,"Sport Captain"]
   Roles:string []=["student" ,"Cadidate","Admin"]
   display_studentRecord:boolean= true
 
@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  console.log(this.firstYearsPercentage);
     }
 
     addCadidate(){

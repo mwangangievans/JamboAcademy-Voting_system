@@ -14,7 +14,7 @@ export class FilterPipePipe implements PipeTransform {
 
   const  Parcels = [];
     for ( const student of value){
-     if(student.full_name.toLowerCase().indexOf(filteredString.toLocaleLowerCase())!==-1){
+     if(student.student_name.toLowerCase().indexOf(filteredString.toLocaleLowerCase())!==-1){
       Parcels.push(student)
      }
     }
