@@ -13,6 +13,7 @@ export class ViewcadidateComponent implements OnInit {
   ElegibleCadidates  = this.student_array.filter((item)=>item.role === "cadidate")
 
 
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {

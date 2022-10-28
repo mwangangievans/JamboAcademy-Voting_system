@@ -85,7 +85,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let student of student_array |filterPipe:filteredString">
+                <tr *ngFor="let student of ElegibleStudent |filterPipe:filteredString">
                   <td>{{student._admission}}</td>
                   <td>
                     <div class="client">

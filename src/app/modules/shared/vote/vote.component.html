@@ -1,0 +1,64 @@
+<h1>Hello Student Its your Right To cast Your Vote!!!</h1>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+       School President
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class=" container">
+          <div class="row" *ngFor="let cadidate of ElegibleCadidates">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="our-team" >
+                <div  *ngIf="cadidate.position ==='School President'">
+                <div class="picture">
+                  <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+                </div>
+                <div class="team-content">
+                  <h3 class="name">{{cadidate.student_name}}</h3>
+                  <h3 class="name">{{cadidate.year}}</h3>
+                  <h4 class="title">For {{ cadidate.position}}</h4>
+                  <h4 class="title"> <button>Vote Now</button> </h4>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       School Sport Captain
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+        <div class="accordion-body">
+          <div class=" container">
+            <div class="row" *ngFor="let cadidate of ElegibleCadidates">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="our-team" >
+                  <div  *ngIf="cadidate.position ==='Sport Captain'">
+                  <div class="picture">
+                    <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+                  </div>
+                  <div class="team-content">
+                    <h3 class="name">{{cadidate.student_name}}</h3>
+                    <h3 class="name">{{cadidate.year}}</h3>
+                    <h4 class="title">For {{ cadidate.position}}</h4>
+                    <h4 class="title"> <button>Vote Now</button> </h4>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+           </div>
+    </div>
+  </div>
+</div>

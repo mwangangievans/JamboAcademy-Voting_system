@@ -10,6 +10,7 @@ import { FilterPipePipe } from './filter-pipe.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCadidateComponent } from './add-cadidate/add-cadidate.component';
 import { ViewcadidateComponent } from './viewcadidate/viewcadidate.component';
+import { VoteComponent } from './vote/vote.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ViewcadidateComponent } from './viewcadidate/viewcadidate.component';
     FilterPipePipe,
     AddCadidateComponent,
     ViewcadidateComponent,
+    VoteComponent,
 
   ],
   imports: [

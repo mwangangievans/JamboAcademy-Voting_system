@@ -19,6 +19,9 @@ export class DashboardComponent implements OnInit {
   display_studentRecord:boolean= true
 
 
+  ElegibleStudent  = this.student_array.filter((item)=>item.role === "student")
+
+
   firstYearsPercentage = ((this.firstYears.length/this.tatolStudents)*100)
   SecondYearspercenage = ((this.SecondYears.length/this.tatolStudents)*100)
   filteredString:string='';
