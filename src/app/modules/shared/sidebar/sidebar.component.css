@@ -141,3 +141,8 @@ background: #b30000;
 #menu-toggle:checked ~ .sidebar .side-menu a span {
   font-size: 1.3rem;
 }
+#gerateData
+{
+  color: red;
+  font-size: large;
+}
