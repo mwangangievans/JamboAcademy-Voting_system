@@ -91,11 +91,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 1rem;
 }
 
-.add, .browse {
+.add, .browse  {
   display: flex;
   align-items: center;
+
 }
 
 .add span {
@@ -269,6 +271,15 @@ table tbody tr {
   }
 }
 
+.dashboard_btn button{
+ color: #00C0A2;
+ margin-left: 2rem;
 
 
+ border-radius: 5px;
+}
+.browse_item{
+  margin-left: 2rem;
+
+}
 

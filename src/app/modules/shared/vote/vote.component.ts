@@ -29,6 +29,8 @@ console.log("vote...." +id);
   }
   votePresident(vote:NgForm){
     console.log(vote.value);
+    console.log(vote.value.cadidate_name);
+
     if (vote.valid) {
       this.student_array = this.student_array.map((element)=>{
 
@@ -44,7 +46,8 @@ console.log("vote...." +id);
                 password: element.password,
                 year: element.year,
                 Is_Voted_for_president:true,
-                // elected_president:
+                elected_president:vote.value.cadidate_name
+
               }
       }
       return studentData;
@@ -58,6 +61,8 @@ console.log("vote...." +id);
 
    voteschoolCaptain(vote:NgForm){
     console.log(vote.value);
+    console.log(vote.value.cadidate_name);
+
     if (vote.valid) {
       this.student_array = this.student_array.map((element)=>{
 
@@ -73,7 +78,9 @@ console.log("vote...." +id);
                 password: element.password,
                 year: element.year,
                 Is_Voted_for_president:element.Is_Voted_for_president,
-                Is_Voted_for_School_captain:true
+                Is_Voted_for_School_captain:true,
+                elected_president:element.elected_president,
+                elected_captain:vote.value.cadidate_name
               }
       }
       return studentData;
@@ -97,7 +104,9 @@ console.log("vote...." +id);
                 password: element.password,
                 year: element.year,
                 Is_Voted_for_president:element.Is_Voted_for_president,
-                Is_Voted_for_School_captain:element.Is_Voted_for_School_captain
+                Is_Voted_for_School_captain:element.Is_Voted_for_School_captain,
+                elected_president:element.elected_president,
+                elected_captain:element.elected_captain
               }
       }
       return studentData;

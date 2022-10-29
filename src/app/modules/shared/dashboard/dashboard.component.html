@@ -59,12 +59,11 @@
       </div>
       <div class="record-header">
         <div class="browse">
-          <div *ngIf="display_studentRecord"> <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/>
-            <button (click)="addCadidate()">Add Cadidate</button>
-            <!-- <button (click)="Cadidate()"> Cadidates</button> -->
+          <div *ngIf="display_studentRecord" class="dashboard_btn">
+            <input type="search" placeholder="Search" class="record-search" [(ngModel)]="filteredString"/>
+             <button  (click)="addCadidate()">Add Cadidate</button>
+              <button  class="browse_item" (click)="resetVotes()">Reset Votes</button>
           </div>
-
-
         </div>
       </div>
       <ng-container *ngIf="display_studentRecord; then students_record; else add_cadidate">
@@ -80,7 +79,7 @@
                   <th><span class="las la-sort"></span> Full Name</th>
                   <th><span class="las la-sort"></span> year</th>
                   <th><span class="las la-sort"></span> role</th>
-                  <th><span class="las la-sort"></span> Password</th>
+                  <!-- <th><span class="las la-sort"></span> Password</th> -->
                   <th><span class="las la-sort"></span> Vote Status</th>
                 </tr>
               </thead>
@@ -96,7 +95,7 @@
                   </td>
                   <td>{{student.year}}</td>
                   <td>{{student.role}}</td>
-                  <td>{{student.password}}</td>
+                  <!-- <td>{{student.password}}</td> -->
                   <td>
                     <div class="actions">
                      <td *ngIf="student.Is_voted"><p>Voted</p></td>

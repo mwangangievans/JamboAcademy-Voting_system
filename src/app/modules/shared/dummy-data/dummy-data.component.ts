@@ -26,7 +26,7 @@ for (const key in this.LoginArray) {
   }
   GenerateLogins(){
 
-      const  loginData : any = [
+      const  loginData : any =  [
         {_admission:1,password:1234,role:"Admin",IsLogin:false},
         {_admission:2,password:1234,role:"student",IsLogin:false},
         {_admission:3,password:1234,role:"student",IsLogin:false},
@@ -47,23 +47,29 @@ for (const key in this.LoginArray) {
 
 
   GenerateDummyData(){
-    const  loginData : any = [
 
-      {Is_voted:false,pass:1234,role:"student",student_name:"tom" , year : "First Year" , _admission:1 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"rose" , year : "First Year" , _admission:2 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"jane" , year : "First Year" , _admission:3 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"ken" , year : "First Second" , _admission:4 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"larry" , year : "First Second" , _admission:5 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"john" , year : "First Year" , _admission:6 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"faith" , year : "First Year" , _admission:7 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"ruth" , year : "First Year" , _admission:8 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"james" , year : "First Second" , _admission:9 },
-      {Is_voted:false,pass:1234,role:"student",student_name:"peter" , year : "First Year" , _admission:10 }
+ console.log(this.student_array);
 
-    ];
+ var StudentDummyData :any = [
+           { Is_voted:false, password:"1234", role:"student",student_name:"tom",year:"First Year",_admission:1},
+           { Is_voted:false, password:"1234", role:"student",student_name:"ken",year:"Second Year",_admission:2},
+           { Is_voted:false, password:"1234", role:"student",student_name:"tonny",year:"First Year",_admission:3},
+           { Is_voted:false, password:"1234", role:"student",student_name:"john",year:"First Year",_admission:4},
+           { Is_voted:false, password:"1234", role:"student",student_name:"rose",year:"Second Year",_admission:5},
+           { Is_voted:false, password:"1234", role:"student",student_name:"mary",year:"First Year",_admission:6},
+           { Is_voted:false, password:"1234", role:"student",student_name:"joseph",year:"Second Year",_admission:7},
+           { Is_voted:false, password:"1234", role:"student",student_name:"samuel",year:"First Year",_admission:8},
+           { Is_voted:false, password:"1234", role:"student",student_name:"ben",year:"Second Year",_admission:9},
+           { Is_voted:false, password:"1234", role:"student",student_name:"narina",year:"First Year",_admission:10},
+           { Is_voted:false, password:"1234", role:"student",student_name:"larry",year:"First Year",_admission:11},
+           { Is_voted:false, password:"1234", role:"student",student_name:"kamau",year:"First Year",_admission:12},
+           { Is_voted:false, password:"1234", role:"student",student_name:"peter",year:"Second Year",_admission:13},
 
 
-    this.student_array.push(loginData)
-    localStorage.setItem("StudentsTable", JSON.stringify(this.student_array));
+];
+
+
+    this.student_array.push(StudentDummyData)
+    localStorage.setItem("StudentsTable", JSON.stringify(StudentDummyData));
   }
 }

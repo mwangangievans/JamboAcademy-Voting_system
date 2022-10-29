@@ -29,19 +29,41 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.student_array);
-    // for (const key in this.student_array) {
-    //   if (Object.prototype.hasOwnProperty.call(this.student_array, key)) {
-    //     const element = this.student_array[key];
-    //     console.log(element.student_name);
-    //   }
-    // }
+
 
     }
 
     addCadidate(){
      this.display_studentRecord=false
     }
+
+    resetVotes(){
+
+        this.student_array = this.student_array.map((element)=>{
+
+        let studentData : registerData = element
+          studentData = {
+            _admission: element._admission,
+            role: element.role,
+            Is_voted: false,
+            student_name: element.student_name,
+            position:element.position,
+            password: element.password,
+            year: element.year,
+            // Is_Voted_for_president:element.Is_Voted_for_president,
+            // Is_Voted_for_School_captain:true,
+            // elected_president:element.elected_president,
+            // elected_captain:vote.value.cadidate_name
+                }
+
+        return studentData;
+        })
+        localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
+       location.reload()
+
+      }
+
+
   }
 
 
