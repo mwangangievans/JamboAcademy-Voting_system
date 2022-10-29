@@ -75,13 +75,13 @@
 
         <!-- School Captain Votes Analytics -->
 
-        <div class="card">
+        <div class="card" *ngFor="let president of SchoolCaptainCadidates">
           <div class="card-head">
             <h2>{{SecondYears.length}}</h2>
-            <span class="las la-user-friends"></span>
+            <small>{{president.student_name}}</small>
           </div>
           <div class="card-progress">
-            <small>Second Years {{SecondYearspercenage | number: '1.0-0'}} %</small>
+            <small>For {{president.position}}</small>
             <div class="card-indicator">
               <div class="indicator three"  [style.width.%]="SecondYearspercenage"></div>
             </div>

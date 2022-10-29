@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   firstYears  = this.student_array.filter((item)=>item.year === "First Year")
   SecondYears  = this.student_array.filter((item)=>item.year === "Second Year")
   presindentialCadidates  = this.student_array.filter((item)=>item.position === "School President")
+  SchoolCaptainCadidates  = this.student_array.filter((item)=>item.position === "Sport Captain")
 
   TotalVotesCasted  = this.student_array.filter((item)=>item.Is_voted === true)
   SlotsToViewFor:string []=["School President" ,"Sport Captain"]
@@ -31,6 +32,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
 
 
     }

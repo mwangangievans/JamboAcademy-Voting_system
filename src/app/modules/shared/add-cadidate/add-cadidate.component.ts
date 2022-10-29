@@ -51,7 +51,7 @@ export class AddCadidateComponent implements OnInit {
     }
     localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
     cadidate.reset()
-    this.router.navigate(['admin/view-cadidate']);
+    this.router.navigate(['view-cadidate']);
   }
 
 }

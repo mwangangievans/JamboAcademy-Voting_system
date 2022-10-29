@@ -112,7 +112,7 @@ console.log("vote...." +id);
       return studentData;
       })
       localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
-      this.router.navigate(['admin/dashboard']);
+      this.router.navigate(['dashboard']);
 
     }
 
