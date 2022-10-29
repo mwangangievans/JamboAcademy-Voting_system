@@ -57,6 +57,38 @@
           </div>
         </div>
       </div>
+      <!--President Voters Analytics -->
+      <div class="analytics">
+        <div class="card">
+          <div class="card-head">
+            <h2>{{ tatolStudents }}</h2>
+            <span class="las la-user-friends"></span>
+          </div>
+          <div class="card-progress">
+            <small>Total Students Registered</small>
+            <div class="card-indicator">
+              <div class="indicator one"style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- School Captain Votes Analytics -->
+
+        <div class="card">
+          <div class="card-head">
+            <h2>{{SecondYears.length}}</h2>
+            <span class="las la-user-friends"></span>
+          </div>
+          <div class="card-progress">
+            <small>Second Years {{SecondYearspercenage | number: '1.0-0'}} %</small>
+            <div class="card-indicator">
+              <div class="indicator three"  [style.width.%]="SecondYearspercenage"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
       <div class="record-header">
         <div class="browse">
           <div *ngIf="display_studentRecord" class="dashboard_btn">
