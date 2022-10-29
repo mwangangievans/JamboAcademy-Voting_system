@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginsInterface, registerData } from 'src/app/Interfaces/Interface';
 
 @Component({
@@ -12,7 +13,7 @@ export class DummyDataComponent implements OnInit {
   student_array: registerData[] = JSON.parse(localStorage.getItem("StudentsTable") || "[]");
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
 
@@ -67,9 +68,9 @@ for (const key in this.LoginArray) {
 
 
 ];
-
-
     this.student_array.push(StudentDummyData)
     localStorage.setItem("StudentsTable", JSON.stringify(StudentDummyData));
+    this.router.navigate(['admin/dashboard']);
+
   }
 }

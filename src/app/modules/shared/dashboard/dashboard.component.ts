@@ -50,10 +50,7 @@ export class DashboardComponent implements OnInit {
             position:element.position,
             password: element.password,
             year: element.year,
-            // Is_Voted_for_president:element.Is_Voted_for_president,
-            // Is_Voted_for_School_captain:true,
-            // elected_president:element.elected_president,
-            // elected_captain:vote.value.cadidate_name
+
                 }
 
         return studentData;
