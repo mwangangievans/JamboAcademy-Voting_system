@@ -115,6 +115,9 @@ console.log("vote...." +id);
       this.router.navigate(['dashboard']);
 
     }
+    computeVotersCasted(){
+
+    }
 
   }
 

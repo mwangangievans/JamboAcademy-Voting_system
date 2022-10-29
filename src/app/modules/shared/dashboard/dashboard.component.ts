@@ -32,7 +32,19 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // this.student_array = this.student_array.map((element)=>{
 
+    //   let studentData : any = element
+    //   if(element.position=="School President"){
+    //     studentData = {
+    //       id:element._admission,
+    //       name:element.student_name,
+    //           }
+
+    //   return studentData;
+    //         }
+    //   })
+    //   localStorage.setItem("PresidentTable", JSON.stringify( this.student_array));
 
 
     }
