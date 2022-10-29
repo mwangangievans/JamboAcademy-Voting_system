@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   display_studentRecord:boolean= true
 
 
-  ElegibleStudent  = this.student_array.filter((item)=>item.role === "student")
+  // ElegibleStudent  = this.student_array.filter((item)=>item.role === "student")
 
 
   firstYearsPercentage = ((this.firstYears.length/this.tatolStudents)*100)
@@ -29,13 +29,13 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.student_array);
-    for (const key in this.student_array) {
-      if (Object.prototype.hasOwnProperty.call(this.student_array, key)) {
-        const element = this.student_array[key];
-        console.log(element.student_name);
-      }
-    }
+    // console.log(this.student_array);
+    // for (const key in this.student_array) {
+    //   if (Object.prototype.hasOwnProperty.call(this.student_array, key)) {
+    //     const element = this.student_array[key];
+    //     console.log(element.student_name);
+    //   }
+    // }
 
     }
 

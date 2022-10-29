@@ -6,6 +6,8 @@ export  interface registerData{
   role:string
   Is_voted:boolean
   position?:string
+  Is_Voted_for_president?:boolean
+  Is_Voted_for_School_captain?:boolean
 }
 
 export  interface cadidateData{

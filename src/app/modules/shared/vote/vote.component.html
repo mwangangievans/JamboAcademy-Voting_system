@@ -29,15 +29,20 @@
                 <h1>{{ cadidate.student_name }}</h1>
                 <p class="title">FOR</p>
                 <p>{{ cadidate.position }}</p>
-                <form #f="ngForm" (ngSubmit)="castVote(f)">
-                  <select name="_admission" ngModel>
+                <form #f="ngForm" (ngSubmit)="votePresident(f)">
+                  <select name="voter" ngModel>
                     <option value="" disabled>select voter</option>
-                    <option *ngFor="let cadidate of student_array" [value]="cadidate._admission">
-                      {{ cadidate.student_name }}
+                    <option *ngFor="let voter of ElegibleVoters" [value]="voter._admission" >
+
+                        {{ voter.student_name }}
+
+
                     </option>
                   </select>
-                  <input id="firstName" type="text" class="form-control"
-                  name="cadidate_name" value="{{cadidate.student_name }}" ngModel>
+                  <input type="text" class="form-control" hidden
+                  name="cadidate_name"  [value]="cadidate._admission" [ngModel]="cadidate._admission">
+                  <input type="text" class="form-control" hidden
+                  name="position"  [value]="cadidate.position" [ngModel]="cadidate.position">
                   <p><button type="submit" class="voter-btn">Vote</button></p>
                 </form>
 
@@ -80,11 +85,19 @@
                   <h1>{{ cadidate.student_name }}</h1>
                   <p class="title">FOR</p>
                   <p>{{ cadidate.position }}</p>
-                  <a href="#"><i class="fa fa-dribbble"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <p><button>Vote</button></p>
+                  <form #captain="ngForm" (ngSubmit)="voteschoolCaptain(captain)">
+                    <select name="voter" ngModel>
+                      <option value="" disabled>select voter</option>
+                      <option *ngFor="let voter of ElegibleVoters" [value]="voter._admission">
+                        {{ voter.student_name }}
+                      </option>
+                    </select>
+                    <input type="text" class="form-control" hidden
+                    name="cadidate_name"  [value]="cadidate._admission" [ngModel]="cadidate._admission">
+                    <input type="text" class="form-control" hidden
+                    name="position"  [value]="cadidate.position" [ngModel]="cadidate.position">
+                    <p><button type="submit" class="voter-btn">Vote</button></p>
+                  </form>
                 </div>
               </div>
               <div class="col-md-6"></div>

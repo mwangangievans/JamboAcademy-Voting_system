@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { registerData } from 'src/app/Interfaces/Interface';
 
 @Component({
@@ -18,7 +19,7 @@ export class VoteComponent implements OnInit {
   // cadidate_name:string=""
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,9 +27,88 @@ export class VoteComponent implements OnInit {
 console.log("vote...." +id);
 
   }
-  castVote(vote:NgForm){
+  votePresident(vote:NgForm){
     console.log(vote.value);
+    if (vote.valid) {
+      this.student_array = this.student_array.map((element)=>{
 
+      let studentData : registerData = element
+      if(element._admission == vote.value.voter ){
+
+        studentData = {
+                _admission: element._admission,
+                role: element.role,
+                Is_voted: element.Is_voted,
+                student_name: element.student_name,
+                position:element.position,
+                password: element.password,
+                year: element.year,
+                Is_Voted_for_president:true,
+                // elected_president:
+              }
+      }
+      return studentData;
+      })
+    }
+    localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
 
   }
-}
+
+   // vote for school captain logic
+
+   voteschoolCaptain(vote:NgForm){
+    console.log(vote.value);
+    if (vote.valid) {
+      this.student_array = this.student_array.map((element)=>{
+
+      let studentData : registerData = element
+      if(element._admission == vote.value.voter ){
+
+        studentData = {
+                _admission: element._admission,
+                role: element.role,
+                Is_voted: element.Is_voted,
+                student_name: element.student_name,
+                position:element.position,
+                password: element.password,
+                year: element.year,
+                Is_Voted_for_president:element.Is_Voted_for_president,
+                Is_Voted_for_School_captain:true
+              }
+      }
+      return studentData;
+      })
+    }
+    localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
+  this.setVoted(vote.value.voter)
+  }
+  setVoted(id:Number){
+    this.student_array = this.student_array.map((element)=>{
+
+      let studentData : registerData = element
+      if(element._admission == id && element.Is_Voted_for_School_captain==true && element.Is_Voted_for_School_captain){
+
+        studentData = {
+                _admission: element._admission,
+                role: element.role,
+                Is_voted: true,
+                student_name: element.student_name,
+                position:element.position,
+                password: element.password,
+                year: element.year,
+                Is_Voted_for_president:element.Is_Voted_for_president,
+                Is_Voted_for_School_captain:element.Is_Voted_for_School_captain
+              }
+      }
+      return studentData;
+      })
+      localStorage.setItem("StudentsTable", JSON.stringify( this.student_array));
+      this.router.navigate(['admin/dashboard']);
+
+    }
+
+  }
+
+
+
+
