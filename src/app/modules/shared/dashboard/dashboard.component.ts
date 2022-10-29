@@ -13,6 +13,8 @@ export class DashboardComponent implements OnInit {
   tatolStudents:number = this.student_array.length ;
   firstYears  = this.student_array.filter((item)=>item.year === "First Year")
   SecondYears  = this.student_array.filter((item)=>item.year === "Second Year")
+  presindentialCadidates  = this.student_array.filter((item)=>item.position === "School President")
+
   TotalVotesCasted  = this.student_array.filter((item)=>item.Is_voted === true)
   SlotsToViewFor:string []=["School President" ,"Sport Captain"]
   Roles:string []=["student" ,"Cadidate","Admin"]

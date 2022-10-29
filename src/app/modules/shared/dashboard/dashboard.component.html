@@ -59,13 +59,14 @@
       </div>
       <!--President Voters Analytics -->
       <div class="analytics">
-        <div class="card">
+        <div class="card" *ngFor="let president of presindentialCadidates">
           <div class="card-head">
             <h2>{{ tatolStudents }}</h2>
-            <span class="las la-user-friends"></span>
+            <small>{{president.student_name}}</small>
+            <!-- <span> {{president.student_name}}</span> -->
           </div>
           <div class="card-progress">
-            <small>Total Students Registered</small>
+            <small>For {{president.position}}</small>
             <div class="card-indicator">
               <div class="indicator one"style="width: 100%"></div>
             </div>
