@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { registerData } from 'src/app/Interfaces/Interface';
+import { registerData, votesInterface } from 'src/app/Interfaces/Interface';
 
 @Component({
   selector: 'app-vote',
@@ -10,6 +10,8 @@ import { registerData } from 'src/app/Interfaces/Interface';
 })
 export class VoteComponent implements OnInit {
   student_array :registerData  []= JSON.parse(localStorage.getItem("StudentsTable")|| "[]");
+  president_array :votesInterface  []= JSON.parse(localStorage.getItem("SchoolPresidentTable")|| "[]");
+
   ElegibleCadidates  = this.student_array.filter((item)=>item.role === "cadidate")
   ElegibleVoters  = this.student_array.filter((item)=>item.Is_voted === false)
   vote: string = "First Year";
@@ -115,12 +117,19 @@ console.log("vote...." +id);
       this.router.navigate(['dashboard']);
 
     }
-    computeVotersCasted(){
-
-    }
-
+    computePresidentVotesCasted(){
+      this.president_array = this.president_array.map((element)=>{
+        let voterData : votesInterface = element
+        voterData = {
+          id:element.id,
+          name:element.name,
+          count:this.student_array.filter((item)=>item.elected_president === element.id).length
+                }
+        return voterData;
+        })
+      localStorage.setItem("SchoolPresidentTable", JSON.stringify( this.president_array));
   }
-
+}
 
 
 

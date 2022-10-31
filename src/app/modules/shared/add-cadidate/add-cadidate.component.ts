@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { cadidateData, registerData } from 'src/app/Interfaces/Interface';
+import { CadidateServiceService } from 'src/app/services/cadidate-service.service';
 
 @Component({
   selector: 'app-add-cadidate',
@@ -22,7 +23,7 @@ export class AddCadidateComponent implements OnInit {
 
   ElegibleCadidates  = this.student_array.filter((item)=>item.role === "student")
 
-  constructor(private router:Router) { }
+  constructor(private router:Router , private  cadidateServ:CadidateServiceService) { }
 
   ngOnInit(): void {
 

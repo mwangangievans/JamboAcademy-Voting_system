@@ -51,9 +51,9 @@
             <span class="las la-user-friends"></span>
           </div>
           <div class="card-progress">
-            <small>Total Votes Casted</small>
+            <small>Total Votes Casted  {{castedVotespercenage | number: '1.0-0'}} %</small>
             <div class="card-indicator">
-              <div class="indicator four" style="width: 90%"></div>
+              <div class="indicator four"  [style.width.%]="castedVotespercenage"></div>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
           <div class="card-head">
             <!-- <h2>{{ tatolStudents }}</h2> -->
             <small>{{president.student_name}}</small>
-            <!-- <span> {{president.student_name}}</span> -->
+            <span> {{president.count}}</span>
           </div>
           <div class="card-progress">
             <small>For {{president.position}}</small>
@@ -80,6 +80,7 @@
           <div class="card-head">
             <!-- <h2>{{SecondYears.length}}</h2> -->
             <small>{{president.student_name}}</small>
+            <span> {{president.count}}</span>
           </div>
           <div class="card-progress">
             <small>For {{president.position}}</small>

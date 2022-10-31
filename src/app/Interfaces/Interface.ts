@@ -24,6 +24,17 @@ export interface LoginsInterface {
   IsLogin:boolean;
 }
 
+export interface presidentInterface {
+  _admission:number;
+  student_name:string;
+  count?:number;
+}
+
+export interface votesInterface {
+  id:number;
+  name:string;
+  count?:number;
+}
 
 
 

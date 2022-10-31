@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCadidateComponent } from './add-cadidate/add-cadidate.component';
 import { ViewcadidateComponent } from './viewcadidate/viewcadidate.component';
 import { VoteComponent } from './vote/vote.component';
+import {  MaterialModule} from './../material/material.module';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { VoteComponent } from './vote/vote.component';
     CommonModule,
     SharedRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule ,
+    MaterialModule,
+
   ]
 })
 export class SharedModule { }
